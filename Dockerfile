@@ -1,7 +1,6 @@
-# BUILD
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR '/app'
 
 COPY package.json ./
 
@@ -11,7 +10,7 @@ COPY ./ ./
 
 RUN npm run build
 
-# RUN PRODUCTION
+
 FROM nginx
 
 EXPOSE 80
